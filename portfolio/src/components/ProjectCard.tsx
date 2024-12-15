@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface ProjectCardProps {
   id: number;
   title: {
@@ -26,7 +28,7 @@ const ProjectCard = ({ id, title, category, description, image }: ProjectCardPro
         <span className="project-category">{category.ja}</span>
         <p className="project-description">{description.ja}</p>
         <div className="project-links">
-          <a href={`/project/${id}`} className="button">詳細を見る</a>
+          <Link to={`/project/${id}`} className="button">詳細を見る</Link>
         </div>
       </div>
     </article>

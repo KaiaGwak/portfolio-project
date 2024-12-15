@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useApp } from '../contexts/AppContext';
 
 const Header = () => {
-  const [currentLang, setCurrentLang] = useState<'ja' | 'en'>('ja');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { language, setLanguage, theme, setTheme } = useApp();
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.body.classList.toggle('dark-theme', newTheme === 'dark');
   };
 
   return (
@@ -15,15 +16,15 @@ const Header = () => {
         <h1 className="nav__logo">Portfolio</h1>
         <div className="nav__menu-container">
           <ul className="nav__menu">
-            <li><a href="#home" data-lang="home">ホーム</a></li>
-            <li><a href="#projects" data-lang="projects">プロジェクト</a></li>
-            <li><a href="#about" data-lang="about">概要</a></li>
+            <li><Link to="/" data-lang="home">{language === 'ja' ? 'ホーム' : 'Home'}</Link></li>
+            <li><Link to="/#projects" data-lang="projects">{language === 'ja' ? 'プロジェクト' : 'Projects'}</Link></li>
+            <li><Link to="/#about" data-lang="about">{language === 'ja' ? '概要' : 'About'}</Link></li>
           </ul>
           <div className="nav__controls">
             <select 
               className="lang-switch"
-              value={currentLang}
-              onChange={(e) => setCurrentLang(e.target.value as 'ja' | 'en')}
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as 'ja' | 'en')}
             >
               <option value="ja">日本語</option>
               <option value="en">English</option>
@@ -32,7 +33,7 @@ const Header = () => {
               className="theme-toggle"
               onClick={toggleTheme}
             >
-              {isDarkMode ? '☀️' : '🌙'}
+              {theme === 'dark' ? '☀️' : '🌙'}
             </button>
           </div>
         </div>

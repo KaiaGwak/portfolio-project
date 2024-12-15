@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 interface Project {
   id: number;
   title: {
@@ -5,7 +6,7 @@ interface Project {
     en: string;
   };
   category: {
-    ja: string;
+   ja: string;
     en: string;
   };
   description: {
@@ -19,7 +20,7 @@ interface Project {
 }
 
 const ProjectDetail = () => {
-  // 실제로는 ID를 URL에서 가져와서 해당 프로젝트를 찾아야 합니다
+  const { id } = useParams();
   const project: Project = {
     id: 1,
     title: { ja: 'プロジェクト1', en: 'Project 1' },
