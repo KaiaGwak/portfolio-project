@@ -13,8 +13,9 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: ReactNode }) {
+  // 여기에 있어야 합니다
   const [language, setLanguage] = useState<Language>('ja');
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('light');  // 이 부분!
 
   const value = {
     language,
