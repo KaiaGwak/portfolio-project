@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useApp } from '../contexts/AppContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const Header = () => {
   const { language, setLanguage, theme, setTheme } = useApp();
+  const { user, logout } = useAuth();
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -35,6 +37,18 @@ const Header = () => {
             >
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
+            {user ? (
+              <div className="user-menu">
+                <span className="username">{user.username}</span>
+                <button onClick={logout} className="logout-btn">
+                  {language === 'ja' ? 'ログアウト' : 'Logout'}
+                </button>
+              </div>
+            ) : (
+              <Link to="/login" className="login-btn">
+                {language === 'ja' ? 'ログイン' : 'Login'}
+              </Link>
+            )}
           </div>
         </div>
       </nav>
