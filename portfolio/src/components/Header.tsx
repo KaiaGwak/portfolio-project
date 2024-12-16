@@ -20,6 +20,7 @@ const Header = () => {
           <ul className="nav__menu">
             <li><Link to="/" data-lang="home">{language === 'ja' ? 'ホーム' : 'Home'}</Link></li>
             <li><Link to="/#projects" data-lang="projects">{language === 'ja' ? 'プロジェクト' : 'Projects'}</Link></li>
+            <li><Link to="/board" data-lang="board">{language === 'ja' ? '掲示板' : 'Board'}</Link></li>
             <li><Link to="/#about" data-lang="about">{language === 'ja' ? '概要' : 'About'}</Link></li>
           </ul>
           <div className="nav__controls">

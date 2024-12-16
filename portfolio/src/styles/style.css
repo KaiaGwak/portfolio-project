@@ -575,3 +575,137 @@ body.dark-theme .logout-btn:hover {
     border-color: var(--text-primary);
     color: var(--text-primary);
 }
+/* Board Styles */
+.board-page {
+    padding: 8rem 2rem 4rem;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.board-table th,
+.board-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.board-table th {
+    background: var(--bg-primary);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.board-table tr:last-child td {
+    border-bottom: none;
+}
+
+.board-table td a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.board-table td a:hover {
+    color: var(--primary);
+}
+
+/* Dark theme support */
+body.dark-theme .board-table th {
+    background: var(--bg-primary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .board-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+    .board-table th:nth-child(4),
+    .board-table td:nth-child(4),
+    .board-table th:nth-child(5),
+    .board-table td:nth-child(5) {
+        display: none;
+    }
+}
+/* Board Write Form Styles */
+.board-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--text-secondary);
+    border-radius: 0.5rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    resize: vertical;
+    min-height: 200px;
+    font-family: var(--font-main);
+    line-height: 1.7;
+    transition: border-color var(--transition-fast);
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.button-secondary {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--text-secondary);
+}
+
+.button-secondary:hover {
+    border-color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+/* Dark theme support */
+body.dark-theme .form-textarea {
+    background: var(--bg-primary);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .form-textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+body.dark-theme .button-secondary {
+    background: var(--bg-primary);
+    border-color: var(--text-secondary);
+}
+
+body.dark-theme .button-secondary:hover {
+    border-color: var(--text-primary);
+}
