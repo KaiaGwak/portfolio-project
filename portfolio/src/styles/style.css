@@ -1,15 +1,17 @@
 /* Base */
-@import '/src/styles/base/variables.css';
-@import '/src/styles/base/reset.css';
+@import './base/_variables.css';
+@import './base/_reset.css';
+@import './base/_typography.css';
 
 /* Layout */
-@import '/src/styles/layout/container.css';
+@import './layout/_container.css';
 
 /* Components */
-@import '/src/styles/components/header.css';
-@import '/src/styles/components/buttons.css';
-@import '/src/styles/components/forms.css';
-@import '/src/styles/components/board.css';
+@import './components/_header.css';
+@import './components/_buttons.css';
+@import './components/_forms.css';
+@import './components/_board.css';
 
 /* Pages */
-@import '/src/styles/pages/project.css';
+@import './pages/_auth.css';
+@import './pages/_project.css';
