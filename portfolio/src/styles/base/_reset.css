@@ -1,0 +1,38 @@
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+/* Reset links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset buttons */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Reset lists */
+ul, ol {
+    list-style: none;
+}
+
+/* Reset form elements */
+input, textarea, select {
+    font-family: inherit;
+}

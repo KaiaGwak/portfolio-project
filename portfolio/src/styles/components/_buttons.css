@@ -1,0 +1,98 @@
+/* Button Base */
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    background-image: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, var(--accent), var(--primary));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+/* Secondary Button */
+.button-secondary {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--text-secondary);
+}
+
+.button-secondary:hover {
+    border-color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+/* Danger Button */
+.button-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.button-danger:hover {
+    background: #dc2626;
+}
+
+/* Login/Logout Buttons */
+.login-btn,
+.logout-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.login-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.logout-btn {
+    background: none;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+}
+
+.logout-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Dark theme support */
+body.dark-theme .button-secondary {
+    background: var(--bg-primary);
+    border-color: var(--text-secondary);
+}
+
+body.dark-theme .button-secondary:hover {
+    border-color: var(--text-primary);
+}
